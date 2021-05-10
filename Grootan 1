@@ -1,0 +1,33 @@
+CREATE TABLE IF NOT EXISTS 'daily_product'(
+  'item_details' int(11) NOT NULL,
+  'item_id' int(11) NOT NULL,
+  'item_name' varchar(250) NOT NULL,
+  'item_password BINARY(64) NOT NULL,
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+
+
+INSERT INTO 'item_details' ('item_details', 'item_id','item_name', 'item_password') VALUES(@item_details,@item_id,@item_name,HASHBYTES('SHA2_512', @item_password))
+
+ALTER TABLE 'item_details'
+  ADD PRIMARY KEY ('item_details');
+
+
+ALTER TABLE 'item_details'
+  MODIFY 'item_details' int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+
+
+CSV file:
+
+itemdetails.csv
+
+
+1, 101, 'poonguzhali', 199.00,'123'
+2, 102, 'pavithran', 749.00,'123'
+3, 103, 'pradheep;, 349.00,'123'
+4, 104, 'nikila', 299.00,'123'
+5, 105, 'gopika;, 180.00,'123'
+6, 106, 'bhupathi raja', 99.00,'123'
+7, 107, 'prithika', 499.00,'123'
+8, 108, 'manikandan, 6999.00,'123'
+9, 109, 'malathi', 2499.00,'123'
+10, 110, 'abirami', 3999.00,'123'
